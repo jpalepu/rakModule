@@ -42,7 +42,7 @@ void at_command_task(void* pvParameter) {
             send_at_command(command);
             vTaskDelay(pdMS_TO_TICKS(1000)); 
 
-            int len = uart_read_bytes(UART_NUM, uart_data, BUF_SIZE, pdMS_TO_TICKS(5000)); // Adjust timeout as needed
+            int len = uart_read_bytes(UART_NUM, uart_data, BUF_SIZE, pdMS_TO_TICKS(5000)); 
             if (len > 0) {
                 uart_data[len] = '\0';
                 printf("Response: %s\n", uart_data);
